@@ -1,8 +1,6 @@
-#phpipam
+# phpIpam
 
-phpipam - - Docker compose
-
-Ver en "localhost:8200"
+Ver en "http://localhost:8200"
 
 MariaDB username: root
 
@@ -12,8 +10,8 @@ MariaDB database: db
 
 MariaDB database name: phpipam
 
-Password: phpipam
+Password: p4ssw0rd
 
 User name: Admin
 
-Password: phpipam
+Password: p4ssw0rd
