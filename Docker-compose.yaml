@@ -1,0 +1,27 @@
+services:
+
+  phpipam:
+  
+    image: phpipam/phpipam-www:latest
+    container_name: phpipam
+    ports:
+      - "8200:80"
+    environment:
+      - TZ=America/Panama
+      - IPAM_DATABASE_HOST=db
+      - IPAM_DATABASE_USER=root      
+      - IPAM_DATABASE_PASS=p4ssw0rd
+      - IPAM_DATABASE_NAME=phpipam
+      - IPAM_DATABASE_WEBHOST=%
+    restart: unless-stopped
+    depends_on:
+      - db
+
+  db:
+    image: lscr.io/linuxserver/mariadb:latest 
+    container_name: db-ipam
+    environment:
+      - MYSQL_ROOT_PASSWORD=p4ssw0rd
+    restart: unless-stopped
+    volumes:
+      - ./phpipam-db-data:/var/lib/mysql
